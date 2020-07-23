@@ -5,8 +5,8 @@ const LANGUAGES = ['en', 'ru'];
 
 let sysLang = {
     instructionBase: [
-        'Press right ctrl and say what you need',
-        'Нажмите правую клавишу ctrl и скажите необходимый текст'
+        'Press left ctrl and say what you need',
+        'Нажмите левую клавишу ctrl и скажите необходимый текст'
     ],
     textarea: [
         'Your text here',
@@ -19,7 +19,8 @@ let sysLang = {
     clear: [
         'Clear',
         'Очистить'
-    ]
+    ],
+    copied: ['Copied', 'Скопировано']
 };
 
 let wordSymbols = {

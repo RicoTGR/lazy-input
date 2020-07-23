@@ -3,7 +3,7 @@ let inputLang = lang;
 function onClipboardClick() {
     navigator.clipboard.writeText(document.getElementById('textarea').value)
         .then(() => {
-            document.getElementById('instruction').innerText = 'Copied';
+            document.getElementById('instruction').innerText = changeLang('copied');
         })
         .catch(err => {
             console.log('Something went wrong', err);
@@ -19,7 +19,7 @@ function onChangeLang() {
         inputLang = 'ru';
         document.getElementById('language').innerText = 'Текущий язык - русский';
     }
-
+    recognition.lang = inputLang;
 }
 
 function onCleanClick() {

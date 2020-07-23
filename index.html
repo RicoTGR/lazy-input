@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Lazy Input</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-$END$
+    <div id="textarea_div">
+        <p id="instruction"></p>
+        <button id="language" onclick="onChangeLang()"></button><br>
+        <label id="textareaLabel" for="textarea"></label><br>
+        <textarea id="textarea" rows="10%" cols="80%"></textarea>
+    </div>
+    <div id="buttons_div">
+        <button id="clipboard" onclick="onClipboardClick()"></button>
+        <button id="clear" onclick="onCleanClick()"></button>
+    </div>
+    <script type="text/javascript" src="js/language.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/speech.js"></script>
 </body>
 </html>

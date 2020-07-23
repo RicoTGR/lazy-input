@@ -1,5 +1,4 @@
-let lang = window.navigator ? window.navigator.language : "en";
-lang = lang.substr(0, 2).toLowerCase();
+let inputLang = lang;
 
 function onClipboardClick() {
     navigator.clipboard.writeText(document.getElementById('textarea').value)
@@ -11,7 +10,29 @@ function onClipboardClick() {
         });
 }
 
-function onCleanClick() {
-    document.getElementById("textarea").value = "";
-    document.getElementById('instruction').innerText = 'Press right ctrl and say what you need';
+function onChangeLang() {
+    if(inputLang === 'ru') {
+        inputLang = 'en';
+        document.getElementById('language').innerText = 'Current language is English';
+    }
+    else {
+        inputLang = 'ru';
+        document.getElementById('language').innerText = 'Текущий язык - русский';
+    }
+
 }
+
+function onCleanClick() {
+    document.getElementById('instruction').innerText = changeLang('instructionBase');
+    document.getElementById('clear').innerText = changeLang('clear');
+    document.getElementById('clipboard').innerText = changeLang('clipboard');
+    document.getElementById('textarea').value = '';
+    document.getElementById('textareaLabel').innerText = changeLang('textarea');
+}
+
+onCleanClick();
+
+document.addEventListener("DOMContentLoaded", () => {
+    if(inputLang === 'en') document.getElementById('language').innerText = 'Current language is English';
+    else document.getElementById('language').innerText = 'Текущий язык - русский';
+});
